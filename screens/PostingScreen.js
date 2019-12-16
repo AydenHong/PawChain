@@ -16,6 +16,7 @@ import RoundButton from '../components/RoundButton';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
 import Modal from 'react-native-modal';
+import CancelButton from '../components/CancelButton'
 
 export default class PostingScreen extends Component {
 	state = {
@@ -50,24 +51,16 @@ export default class PostingScreen extends Component {
 
 	static navigationOptions = ({ navigation }) => {
 		const params = navigation.state.params || {};
-
 		return {
-			headerLeft: <View style={{ padding: 5, paddingLeft: 15 }} />,
-			headerRight: (
-				<TouchableOpacity
-					style={{ padding: 5, paddingLeft: 15, marginRight: 10 }}
-				>
-					<Text style={{ fontSize: 17, color: 'gray' }}>취소</Text>
-				</TouchableOpacity>
-			),
-			title: '새 게시글',
+			headerRight: <CancelButton onPress={() => navigation.navigate("Home")} />,
+			title: "새 게시글",
 			headerTitleStyle: {
-				textAlign: 'center',
-				flex: 1,
-				fontSize: 22
+			  textAlign: "center",
+			  flex: 1,
+			  fontSize: 20
 			}
+		  };
 		};
-	};
 
 	render() {
 		return (

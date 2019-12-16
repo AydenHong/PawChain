@@ -8,6 +8,7 @@ import {
 	FlatList
 } from 'react-native';
 import UsageCell from '../components/UsageCell';
+import CancelButton from '../components/CancelButton'
 
 const mockDataSep = [
 	{
@@ -116,16 +117,15 @@ export default class DonationUsageScreen extends Component {
 		const params = navigation.state.params || {};
 
 		return {
-			headerLeft       : <View style={{ padding: 5, paddingLeft: 15 }} />,
-			headerRight      : <View style={{ padding: 5, paddingLeft: 15 }} />,
-			title            : '기부금 사용 내역',
-			headerTitleStyle : {
-				textAlign : 'center',
-				flex      : 1,
-				fontSize  : 22
+			headerRight: <CancelButton onPress={() => navigation.navigate("Home")} />,
+			title: "기부금 사용 내역",
+			headerTitleStyle: {
+			  textAlign: "center",
+			  flex: 1,
+			  fontSize: 20
 			}
+		  };
 		};
-	};
 
 	renderItem = ({ item }) => {
 		return <UsageCell {...item} />;

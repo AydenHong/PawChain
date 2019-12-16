@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image, TouchableOpacity } from 'react-native'
 import IconTextInput from '../components/IconTextInput';
+import IconTextInput2 from '../components/IconTextInput2';
 
 export default class SignUp extends React.Component {
 
@@ -32,7 +33,7 @@ render() {
           onChangeText={ID => this.setState({ ID })}
           value={this.state.ID}
         />
-        <IconTextInput
+        <IconTextInput2
           secureTextEntry
           iconName = 'ios-lock'
           placeholder="비밀번호"
@@ -41,6 +42,15 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
+        <IconTextInput2
+        secureTextEntry
+        iconName = 'ios-lock'
+        placeholder="비밀번호 확인"
+        autoCapitalize="none"
+        style={styles.textInput}
+        onChangeText={password => this.setState({ password })}
+        value={this.state.password}
+      />
         <IconTextInput
           iconName = 'ios-call'
           placeholder="휴대폰 번호"

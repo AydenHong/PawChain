@@ -15,11 +15,19 @@ import DetailScreen from '../screens/DetailScreen';
 import DonationUsageScreen from '../screens/DonationUsageScreen';
 import PostingScreen from '../screens/PostingScreen';
 import ShelterProfileScreen from '../screens/ShelterProfileScreen';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 const config = Platform.select({
 	web     : { headerMode: 'screen' },
 	default : {}
 });
+
+const AuthStack = createStackNavigator({
+	Login : LoginScreen,
+	Register : RegisterScreen,
+
+  })
 
 const HomeStack = createStackNavigator(
 	{

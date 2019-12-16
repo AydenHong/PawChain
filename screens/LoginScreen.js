@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 
 import IconTextInput from '../components/IconTextInput';
+import IconTextInput2 from '../components/IconTextInput2';
 import LoginButton from '../components/LoginButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -68,13 +69,13 @@ export default class LoginScreen extends Component {
 					<IconTextInput
 						style={{ marginTop: 10 }}
 						iconName={'ios-person'}
-						placeholder={'이름'}
+						placeholder={'아이디'}
 						onChange={(text) => this.setState({ nameInput: text })}
 					/>
-					<IconTextInput
+					<IconTextInput2
 						style={{ marginTop: 10 }}
-						iconName={'ios-mail'}
-						placeholder={'이메일'}
+						iconName={'ios-lock'}
+						placeholder={'비밀번호'}
 						onChange={(text) => this.setState({ emailInput: text })}
 					/>
 					<LoginButton
