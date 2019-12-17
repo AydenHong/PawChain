@@ -23,11 +23,6 @@ const config = Platform.select({
 	default : {}
 });
 
-const AuthStack = createStackNavigator({
-	Login : LoginScreen,
-	Register : RegisterScreen,
-
-  })
 
 const HomeStack = createStackNavigator(
 	{

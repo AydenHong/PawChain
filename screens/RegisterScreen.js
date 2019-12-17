@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image, TouchableOpacity } from 'react-native'
 import IconTextInput from '../components/IconTextInput';
 import IconTextInput2 from '../components/IconTextInput2';
+import * as firebase from 'firebase';
 
 export default class SignUp extends React.Component {
 
@@ -66,7 +67,10 @@ render() {
           onChangeText={name => this.setState({ name })}
           value={this.state.name}
         />
-        <TouchableOpacity title="회원 가입" onPress={this.handleSignUp} >
+        <TouchableOpacity title="회원 가입" onPress={this.handleSignUp} 
+            onPress={() => Alert.alert('성공적으로 회원가입이 됐습니다.')}
+            onPress={() => this.props.navigation.navigate('Login')}
+            >
           <Text style={{fontSize: 20, color: 'tomato', fontWeight: 'bold', padding: 15}}>회원 가입</Text>
         </TouchableOpacity>
         <View style={{flexDirection: 'row'}}>

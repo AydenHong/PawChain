@@ -7,19 +7,32 @@ import {
 	createDrawerNavigator,
 	DrawerNavigator
 } from 'react-navigation';
+import * as firebase from 'firebase';
+
 
 import TabBarIcon from '../components/TabBarIcon';
-
 import LoginScreen from '../screens/LoginScreen';
-
 import HomeStack from './HomeStackNavigator';
 import NewPostStack from './NewPostStackNavigator';
 import SettingsStack from './SettingsStackNavigator';
-
 import DonationUsageScreen from '../screens/DonationUsageScreen';
 import SideStack from '../screens/SideMenuScreen';
 import SideMenuScreen from '../screens/SideMenuScreen';
 import RegisterScreen from '../screens/RegisterScreen'
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBcWEgH6DSB-d8ll4FcMgZ75JXAeuoVCjA",
+    authDomain: "pawchain-8d11a.firebaseapp.com",
+    databaseURL: "https://pawchain-8d11a.firebaseio.com",
+    projectId: "pawchain-8d11a",
+    storageBucket: "pawchain-8d11a.appspot.com",
+    messagingSenderId: "835857435051",
+    appId: "1:835857435051:web:c0af6149f8519ef941aaee",
+    measurementId: "G-LX3Z33XB2T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
 
 const config = Platform.select({
 	web     : { headerMode: 'screen' },
@@ -68,9 +81,10 @@ const MainTab = createBottomTabNavigator(
 const RootStack = createStackNavigator(
 	{
 		Main  : {
-			screen : MainTab
+			screen: LoginScreen
 		},
 		//
+		screen : MainTab,
 		Login : LoginScreen,
 		Register : RegisterScreen
 		
